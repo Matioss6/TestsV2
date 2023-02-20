@@ -45,6 +45,7 @@ public class Main {
         System.out.println(nowe.add(5,8));
         System.out.println(nowe2.add(5,8));
         System.out.println(nowe3.add(5,8));
+        System.out.println(nowe3.add(22,8));
 
 
 
