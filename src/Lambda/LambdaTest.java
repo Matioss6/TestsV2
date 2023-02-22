@@ -1,5 +1,10 @@
 package Lambda;
 
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.function.Consumer;
+
 public class LambdaTest {
 
     public void lambda1(){
@@ -43,8 +48,38 @@ public class LambdaTest {
         System.out.println(nowe3.add(22,8));
 
 
+    }
+
+    public void lambdaAsParam(){
+
+      List<String> kolorki = List.of("niebieski", "czarny", "czerwony");
+
+        Consumer<String> a = parametercik -> System.out.println(parametercik+"param");
+        kolorki.forEach(a);
+
+        kolorki.forEach(kolor -> System.out.println(kolor)); //"normal" lambda
+
+        kolorki.forEach(kolor -> {          // a bit extended lambda
+            String b= kolor+"55";
+            System.out.println(b);
+        });
+
+        kolorki.forEach(System.out::println); // method reference
+
+
 
 
 
     }
+
+    public void lambdaAsParam2(){
+
+        TestLambdaParam lambdaParam = (a,b) ->
+        {String c =a+b;
+            return c;
+        };
+        System.out.println(lambdaParam.addString("dodaj"," mnie to"));
+
+    }
+
 }
