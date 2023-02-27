@@ -1,14 +1,20 @@
 import Lambda.LambdaTest;
 import Lambda.TestLambdaParam;
 import Random.RandomTest;
+import Enum.*;
+
+import java.util.Arrays;
 
 public class Main {
 
     public static void main(String[] args) {
 
         Main main = new Main();
-        main.lambaMain();
-  //      main.randomMain();
+  //    main.lambaMain();
+  //    main.randomMain();
+        main.enumMain();
+
+
 
 
 
@@ -25,7 +31,6 @@ public class Main {
         // lambdaTest.lambdaAsParam2();
 
     }
-    /* *************************   Lambda Tests   ********************************* */
 
 
 
@@ -42,7 +47,29 @@ public class Main {
         System.out.println(b);
         System.out.println(c);
     }
-    /* *************************   Random Tests   ********************************* */
 
+
+    /* *************************   Enum Tests   ********************************* */
+    public void enumMain() {
+//        Flower kwiatek1 =  new Flower(Colour.ZIELONY,Length.DLUGI);
+//        Flower kwiatek2 =  new Flower(Colour.CZARNY,Length.KROTKI);
+//        String a = "ZIELONY";
+//        Colour b = Colour.valueOf(a);
+//
+//
+//        System.out.println(Arrays.toString(Colour.values()));
+//        System.out.println(Colour.ZIELONY.name().equals("ZIELONY"));
+//        System.out.println(b);
+//
+//        System.out.println(kwiatek1);
+//        System.out.println(kwiatek2);
+
+        System.out.println(Arrays.toString(Length.values()));
+
+        for(Length length : Length.values()){
+            System.out.println(length + " " + length.isPretty());
+        }
+
+    }
 
 }
