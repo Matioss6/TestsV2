@@ -26,4 +26,16 @@ public class Rekurencja {
 
     }
 
+    public int fibbonacciRekurencja(int n){
+
+        if (n>1){
+
+            n--;
+            return fibbonacciRekurencja(n-1)+fibbonacciRekurencja(n);
+
+        }
+        else if (n==1) return 1;
+        else return 0;
+    }
+
 }

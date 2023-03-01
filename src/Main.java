@@ -80,6 +80,7 @@ public class Main {
         Rekurencja rek = new Rekurencja();
         System.out.println(rek.sumaIteracja(1050));
         System.out.println(rek.sumaRekurencja(1050));
+        System.out.println(rek.fibbonacciRekurencja(19));
 
     }
 
