@@ -2,6 +2,7 @@ import Lambda.LambdaTest;
 import Lambda.TestLambdaParam;
 import Random.RandomTest;
 import Enum.*;
+import Rekurencja.Rekurencja;
 
 import java.util.Arrays;
 
@@ -12,7 +13,9 @@ public class Main {
         Main main = new Main();
   //    main.lambaMain();
   //    main.randomMain();
-        main.enumMain();
+  //    main.enumMain();
+        main.rekurencjaMain();
+
 
 
 
@@ -69,6 +72,14 @@ public class Main {
         for(Length length : Length.values()){
             System.out.println(length + " " + length.isPretty());
         }
+
+    }
+
+    /* *************************   Rekurencja Tests   ********************************* */
+    public void rekurencjaMain(){
+        Rekurencja rek = new Rekurencja();
+        System.out.println(rek.sumaIteracja(1050));
+        System.out.println(rek.sumaRekurencja(1050));
 
     }
 
