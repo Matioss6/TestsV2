@@ -7,7 +7,7 @@ import java.util.function.Consumer;
 
 public class LambdaTest {
 
-    public void lambda1(){
+    public void lambda1() {
 
         TestLambda<String> old = new TestLambda<String>() {
             @Override
@@ -24,61 +24,57 @@ public class LambdaTest {
         nowe2.collable("hejo method ref");
 
 
-
-
     }
 
-    public void lambda2(){
+    public void lambda2() {
 
         TestLambda2 old = new TestLambda2() {
             @Override
             public int add(int a, int b) {
-                return a+b;
+                return a + b;
             }
         };
 
-        TestLambda2 nowe = (a,b) -> a+b;
+        TestLambda2 nowe = (a, b) -> a + b;
         TestLambda2 nowe2 = Integer::sum;
         TestLambda2 nowe3 = Math::addExact;
 
-        System.out.println(old.add(5,8));
-        System.out.println(nowe.add(5,8));
-        System.out.println(nowe2.add(5,8));
-        System.out.println(nowe3.add(5,8));
-        System.out.println(nowe3.add(22,8));
+        System.out.println(old.add(5, 8));
+        System.out.println(nowe.add(5, 8));
+        System.out.println(nowe2.add(5, 8));
+        System.out.println(nowe3.add(5, 8));
+        System.out.println(nowe3.add(22, 8));
 
 
     }
 
-    public void lambdaAsParam(){
+    public void lambdaAsParam() {
 
-      List<String> kolorki = List.of("niebieski", "czarny", "czerwony");
+        List<String> kolorki = List.of("niebieski", "czarny", "czerwony");
 
-        Consumer<String> a = parametercik -> System.out.println(parametercik+"param");
+        Consumer<String> a = parametercik -> System.out.println(parametercik + "param");
         kolorki.forEach(a);
 
         kolorki.forEach(kolor -> System.out.println(kolor)); //"normal" lambda
 
         kolorki.forEach(kolor -> {          // a bit extended lambda
-            String b= kolor+"55";
+            String b = kolor + "55";
             System.out.println(b);
         });
 
         kolorki.forEach(System.out::println); // method reference
 
 
-
-
-
     }
 
-    public void lambdaAsParam2(){
+    public void lambdaAsParam2() {
 
-        TestLambdaParam lambdaParam = (a,b) ->
-        {String c =a+b;
+        TestLambdaParam lambdaParam = (a, b) ->
+        {
+            String c = a + b;
             return c;
         };
-        System.out.println(lambdaParam.addString("dodaj"," mnie to"));
+        System.out.println(lambdaParam.addString("dodaj", " mnie to"));
 
     }
 

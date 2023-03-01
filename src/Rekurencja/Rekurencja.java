@@ -3,10 +3,10 @@ package Rekurencja;
 public class Rekurencja {
 
     public int sumaIteracja(int n) {
-        int suma=0;
+        int suma = 0;
 
-        for(int i=1; i<=n; i++){
-            suma = suma+i;
+        for (int i = 1; i <= n; i++) {
+            suma = suma + i;
         }
         return suma;
 
@@ -22,19 +22,18 @@ public class Rekurencja {
 //        }
         // Dół daje to samo co to wyżej - nice
 
-        return n>0? n+ sumaRekurencja(n-1) : 0;
+        return n > 0 ? n + sumaRekurencja(n - 1) : 0;
 
     }
 
-    public int fibbonacciRekurencja(int n){
+    public int fibbonacciRekurencja(int n) {
 
-        if (n>1){
+        if (n > 1) {
 
             n--;
-            return fibbonacciRekurencja(n-1)+fibbonacciRekurencja(n);
+            return fibbonacciRekurencja(n - 1) + fibbonacciRekurencja(n);
 
-        }
-        else if (n==1) return 1;
+        } else if (n == 1) return 1;
         else return 0;
     }
 

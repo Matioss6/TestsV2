@@ -1,26 +1,25 @@
+import Enum.Length;
+import Enum.Colour;
 import Lambda.LambdaTest;
-import Lambda.TestLambdaParam;
 import Random.RandomTest;
-import Enum.*;
 import Rekurencja.Rekurencja;
+import Sterowanko.Sterowanie;
 
 import java.util.Arrays;
 
+/**
+ * Main method
+ */
 public class Main {
 
     public static void main(String[] args) {
 
         Main main = new Main();
-  //    main.lambaMain();
-  //    main.randomMain();
-  //    main.enumMain();
-        main.rekurencjaMain();
-
-
-
-
-
-
+        //    main.lambaMain();
+        //    main.randomMain();
+        //    main.enumMain();
+        //    main.rekurencjaMain();
+            main.caseMain();
 
 
     }
@@ -34,7 +33,6 @@ public class Main {
         // lambdaTest.lambdaAsParam2();
 
     }
-
 
 
     /* *************************   Random Tests   ********************************* */
@@ -69,18 +67,31 @@ public class Main {
 
         System.out.println(Arrays.toString(Length.values()));
 
-        for(Length length : Length.values()){
+        for (Length length : Length.values()) {
             System.out.println(length + " " + length.isPretty());
         }
 
     }
 
     /* *************************   Rekurencja Tests   ********************************* */
-    public void rekurencjaMain(){
+    public void rekurencjaMain() {
         Rekurencja rek = new Rekurencja();
         System.out.println(rek.sumaIteracja(1050));
         System.out.println(rek.sumaRekurencja(1050));
         System.out.println(rek.fibbonacciRekurencja(19));
+    }
+
+    /* *************************   Case Tests   ********************************* */
+    public void caseMain() {
+        Sterowanie str = new Sterowanie();
+//        str.switchCase2(Colour.CZARNY);
+//        str.switchCase2(Colour.CZERWONY);
+//        str.switchCase2(Colour.ZIELONY);
+//        str.switchCase2(Colour.BIALY);
+
+        str.switchCase3(Colour.CZARNY);
+        str.switchCase3(Colour.ZIELONY);
+        System.out.println(str.switchCase3(Colour.BIALY));
 
     }
 

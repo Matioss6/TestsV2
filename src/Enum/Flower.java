@@ -5,9 +5,9 @@ public class Flower {
     Colour kolorek;
     Length dlugosc;
 
-    public Flower(Colour kolorek, Length dlugosc){
-        this.kolorek=kolorek;
-        this.dlugosc=dlugosc;
+    public Flower(Colour kolorek, Length dlugosc) {
+        this.kolorek = kolorek;
+        this.dlugosc = dlugosc;
     }
 
     @Override
