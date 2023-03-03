@@ -1,6 +1,7 @@
 import Enum.Length;
 import Enum.Colour;
 import Lambda.LambdaTest;
+import Porównywanko.Porównajmy;
 import Random.RandomTest;
 import Rekurencja.Rekurencja;
 import Sterowanko.Sterowanie;
@@ -19,7 +20,9 @@ public class Main {
         //    main.randomMain();
         //    main.enumMain();
         //    main.rekurencjaMain();
-            main.caseMain();
+        //    main.caseMain();
+            main.porównywanieMain();
+
 
 
     }
@@ -38,15 +41,16 @@ public class Main {
     /* *************************   Random Tests   ********************************* */
     public void randomMain() {
         RandomTest randomTest = new RandomTest();
-        double a;
-        byte b;
-        char c;
-        a = randomTest.castowanie(4, 5);
-        b = (byte) randomTest.castowanie(4, 5);
-        c = (char) randomTest.castowanie(1, 3);
-        System.out.println(a);
-        System.out.println(b);
-        System.out.println(c);
+//        double a;
+//        byte b;
+//        char c;
+//        a = randomTest.castowanie(4, 5);
+//        b = (byte) randomTest.castowanie(4, 5);
+//        c = (char) randomTest.castowanie(1, 3);
+//        System.out.println(a);
+//        System.out.println(b);
+//        System.out.println(c);
+        randomTest.sumaWithArgs(5,3,2,3);
     }
 
 
@@ -92,6 +96,18 @@ public class Main {
         str.switchCase3(Colour.CZARNY);
         str.switchCase3(Colour.ZIELONY);
         System.out.println(str.switchCase3(Colour.BIALY));
+
+    }
+
+    /* *************************   Porównywanie Tests   ********************************* */
+    public void porównywanieMain() {
+        Porównajmy porównajmy = new Porównajmy();
+        porównajmy.createCollections();
+        porównajmy.porównanie();
+
+
+
+
 
     }
 

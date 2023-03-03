@@ -7,6 +7,8 @@ import java.util.function.Consumer;
 
 public class LambdaTest {
 
+
+
     public void lambda1() {
 
         TestLambda<String> old = new TestLambda<String>() {
