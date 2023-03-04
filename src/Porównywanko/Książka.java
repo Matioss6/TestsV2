@@ -3,12 +3,14 @@ package Porównywanko;
 import java.util.Comparator;
 import java.util.Objects;
 
-public class Książka implements Comparator<String>, Comparable<Książka> {
+public class Książka implements  Comparable<Książka>{
 
     private String nazwa;
     private String autor;
+    private int ID;
 
-    public Książka(String nazwa, String autor) {
+    public Książka(String nazwa, String autor, int ID) {
+        this.ID = ID;
         this.nazwa = nazwa;
         this.autor = autor;
     }
@@ -49,17 +51,36 @@ public class Książka implements Comparator<String>, Comparable<Książka> {
         return "Książka{" +
                 "nazwa='" + nazwa + '\'' +
                 ", autor='" + autor + '\'' +
+                ", ID='" + ID + '\'' +
                 '}';
     }
 
 
     @Override
     public int compareTo(Książka o) {
-        return 0;
+        int result;
+
+        result=this.autor.compareTo(o.autor);
+        if (result != 0)        {
+            return result;
+        }
+        else {
+            result = this.nazwa.compareTo(o.nazwa);
+        }
+        System.out.println(result);
+        return result;
     }
 
-    @Override
-    public int compare(String o1, String o2) {
-        return 1;
+    static class KomparatorID implements Comparator<Książka> {
+
+        @Override
+        public int compare(Książka o1, Książka o2) {
+            int ID = o1.ID - o2.ID;
+            if (ID == 0) {
+                return o1.compareTo(o2);
+            }
+            return ID;
+        }
     }
+
 }

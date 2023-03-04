@@ -14,15 +14,15 @@ public class Porównajmy {
 
     public void createCollections() {
 
-        książka[0] = new Książka("Harry Potter cz.1 ", "J.K Rowling");
-        książka[1] = new Książka("Harry Potter cz.2 ", "J.K Rowling");
-        książka[2] = new Książka("Harry Potter cz.3 ", "J.K Rowling");
-        książka[3] = new Książka("Hobbit ", "Tolkien");
-        książka[4] = new Książka("Władca Pierścieni ", "Tolkien");
-        książka[5] = new Książka("Władca Pierścieni ", "Tolkien");
-        książka[6] = new Książka("Gwiezdne Wojny", "Tim Lebbon");
-        książka[7] = new Książka("123", "1ufo2");
-        książka[8] = new Książka("123", "1ufo2");
+        książka[0] = new Książka("Harry Potter cz.1 ", "2J.K Rowling",5);
+        książka[1] = new Książka("Harry Potter cz.2 ", "3.K Rowling",0);
+        książka[2] = new Książka("Harry Potter cz.3 ", "1J.K Rowling",1);
+        książka[3] = new Książka("Hobbit ", "Tolkien",0);
+        książka[4] = new Książka("Władca Pierścieni ", "Tolkien",22);
+        książka[5] = new Książka("Władca Pierścieni ", "Tolkien",55);
+        książka[6] = new Książka("Gwiezdne Wojny", "Tim Lebbon",11);
+        książka[7] = new Książka("123", "1ufo2",7);
+        książka[8] = new Książka("123", "1ufo2",52);
 
         for (int i = 0; i < książka.length; i++) {
             książka1.add(książka[i]);
@@ -40,6 +40,11 @@ public class Porównajmy {
         System.out.println("książka 4(HASH SET) = " + książka4);
         System.out.println("książka 5(Tree Set) = " +  książka5);
         System.out.println("książka 6(HASH MAP) = " + książka6);
+        Collections.sort(książka1);
+        System.out.println("książka 1(LIST - sorted) = " + książka1);
+        Collections.sort(książka1, new Książka.KomparatorID());
+        System.out.println("książka 1(LIST - sorted + komparator) = " + książka1);
+
     }
 
     public void porównanie(){
