@@ -1,5 +1,6 @@
 package Porównywanko;
 
+import java.sql.Array;
 import java.util.*;
 
 public class Porównajmy {
@@ -42,12 +43,30 @@ public class Porównajmy {
         System.out.println("książka 6(HASH MAP) = " + książka6);
         Collections.sort(książka1);
         System.out.println("książka 1(LIST - sorted) = " + książka1);
-        Collections.sort(książka1, new Książka.KomparatorID());
+        książka1.sort(new Książka.KomparatorID());
         System.out.println("książka 1(LIST - sorted + komparator) = " + książka1);
 
     }
 
-    public void porównanie(){
+    public void treeMapTest(){
 
+            Map<Integer, String> employees = new TreeMap<>();
+            employees.put(111, "Jan Kowalski");
+            employees.put(333, "Wojciech Kowalski");
+            employees.put(222, "Kasia Piotrowska");
+            employees.put(555, "Anna Zawadzka");
+            employees.put(444, "Jan Kowalski");
+
+            System.out.println("Ilość pracowników: " + employees.size());
+
+            Set<Integer> keySet = employees.keySet();
+            System.out.println("Klucze:\n" + keySet);
+            Collection<String> values = employees.values();
+            System.out.println("Wartości:\n" + values);
+
+            Set<Map.Entry<Integer,String>> entrySet = employees.entrySet();
+            for(Map.Entry<Integer, String> entry: entrySet) {
+                System.out.println(entry.getKey() + " : " + entry.getValue());
+            }
     }
 }

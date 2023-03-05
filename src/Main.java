@@ -1,5 +1,5 @@
-import Enum.Length;
 import Enum.Colour;
+import Enum.Length;
 import Lambda.LambdaTest;
 import Porównywanko.Porównajmy;
 import Random.RandomTest;
@@ -17,12 +17,11 @@ public class Main {
 
         Main main = new Main();
         //    main.lambaMain();
-        //    main.randomMain();
+        main.randomMain();
         //    main.enumMain();
         //    main.rekurencjaMain();
         //    main.caseMain();
-            main.porównywanieMain();
-
+        main.porównywanieMain();
 
 
     }
@@ -50,7 +49,9 @@ public class Main {
 //        System.out.println(a);
 //        System.out.println(b);
 //        System.out.println(c);
-        randomTest.sumaWithArgs(5,3,2,3);
+        randomTest.sumaWithArgs(5, 3, 2, 3);
+        randomTest.stringConcat();
+        randomTest.stringConcat2();
     }
 
 
@@ -103,10 +104,7 @@ public class Main {
     public void porównywanieMain() {
         Porównajmy porównajmy = new Porównajmy();
         porównajmy.createCollections();
-        porównajmy.porównanie();
-
-
-
+        porównajmy.treeMapTest();
 
 
     }

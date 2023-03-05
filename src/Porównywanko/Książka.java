@@ -76,10 +76,7 @@ public class Książka implements  Comparable<Książka>{
         @Override
         public int compare(Książka o1, Książka o2) {
             int ID = o1.ID - o2.ID;
-            if (ID == 0) {
-                return o1.compareTo(o2);
-            }
-            return ID;
+            return ID == 0 ? o1.compareTo(o2) : ID;
         }
     }
 
