@@ -5,6 +5,7 @@ import Porównywanko.Porównajmy;
 import Random.RandomTest;
 import Rekurencja.Rekurencja;
 import Sterowanko.Sterowanie;
+import Wątki.Wątki;
 
 import java.util.Arrays;
 
@@ -17,11 +18,13 @@ public class Main {
 
         Main main = new Main();
         //    main.lambaMain();
-        main.randomMain();
+       // main.randomMain();
         //    main.enumMain();
         //    main.rekurencjaMain();
         //    main.caseMain();
-        main.porównywanieMain();
+     //   main.porównywanieMain();
+        main.wątkiMain();
+
 
 
     }
@@ -106,6 +109,15 @@ public class Main {
         porównajmy.createCollections();
         porównajmy.treeMapTest();
 
+
+    }
+
+    /* *************************   Wątki Tests   ********************************* */
+    public void wątkiMain() {
+        Wątki wątki = new Wątki();
+     //   wątki.startujeWątki();
+        wątki.startujeWątkiRunnable();
+        wątki.startujeWątkiRunnableSynchro();
 
     }
 
