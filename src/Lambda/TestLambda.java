@@ -2,7 +2,7 @@ package Lambda;
 
 public interface TestLambda<String> {
 
-    public void collable(String b);
+    void collable(String b);
 
 
 }

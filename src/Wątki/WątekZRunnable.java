@@ -1,6 +1,6 @@
 package Wątki;
 
-public class WątekZRunnable implements Runnable{
+public class WątekZRunnable implements Runnable {
 
     @Override
     public void run() {

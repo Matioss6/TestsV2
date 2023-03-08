@@ -2,7 +2,7 @@ package Enum;
 
 public enum Colour {
 
-    ZIELONY, CZERWONY, CZARNY, BIALY;
+    ZIELONY, CZERWONY, CZARNY, BIALY
 
 
 }

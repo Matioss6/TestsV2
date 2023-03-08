@@ -1,13 +1,12 @@
 package Wątki;
 
 public class Wątki {
-    int Liczba;
-    int wynik;
     static int liczbaStatic1;
     static int liczbaStatic2;
+    int Liczba;
+    int wynik;
 
-    public void startujeWątki(){
-
+    public void startujeWątki() {
 
 
         WątekZThread wątpliwyWątek1 = new WątekZThread();
@@ -25,16 +24,17 @@ public class Wątki {
 
     }
 
-    public void startujeWątkiRunnable(){
+    public void startujeWątkiRunnable() {
 
         // not Synchronized
         Thread t1 = new Thread(new WątekZRunnable());
         Thread t2 = new Thread(new WątekZRunnable());
         Thread t3 = new Thread(new WątekZRunnable());
-        Thread t4 = new Thread( () -> {
+        Thread t4 = new Thread(() -> {
             for (int i = 0; i < 10000; i++) {
                 liczbaStatic1++;
-            }});
+            }
+        });
 
         t1.start();
         t2.start();
@@ -53,17 +53,16 @@ public class Wątki {
         System.out.println(liczbaStatic1);
 
 
-
     }
 
-    synchronized void dodawanko(){
+    synchronized void dodawanko() {
         for (int i = 0; i < 10000; i++) {
             liczbaStatic2++;
         }
 
     }
 
-    public void startujeWątkiRunnableSynchro(){
+    public void startujeWątkiRunnableSynchro() {
 
 
         Thread t1 = new Thread(this::dodawanko);

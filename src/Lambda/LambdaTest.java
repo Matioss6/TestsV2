@@ -1,12 +1,10 @@
 package Lambda;
 
-import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.IntFunction;
 
 public class LambdaTest {
-
 
 
     public void lambda1() {
@@ -77,6 +75,17 @@ public class LambdaTest {
             return c;
         };
         System.out.println(lambdaParam.addString("dodaj", " mnie to"));
+
+    }
+
+    public void lambdaBuiltInInterfaces() {
+        IntFunction intFunction = x -> x + 5;
+        int a = 0;
+
+        for (int i = 0; i < 5; i++) {
+
+            System.out.println(intFunction.apply(a));
+        }
 
     }
 

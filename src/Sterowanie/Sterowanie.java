@@ -1,14 +1,14 @@
-package Sterowanko;
-import Enum.*;
+package Sterowanie;
+
+import Enum.Colour;
 
 public class Sterowanie {
-    
-    public void switchCase1(){
-        
+
+    public void switchCase1() {
+
         int a = 1;
-        
-        switch (a)
-        {
+
+        switch (a) {
             case 1: {
                 System.out.println(1);
                 System.out.println(1);
@@ -16,17 +16,16 @@ public class Sterowanie {
             case 2: {
                 System.out.println(55);
             }
-            
-            default:
-            {
+
+            default: {
                 System.out.println(a);
             }
-            
+
         }
     }
 
 
-    public void switchCase2(Colour a){
+    public void switchCase2(Colour a) {
 
 //        switch (a){
 //
@@ -47,20 +46,19 @@ public class Sterowanie {
 //
 //        }
 
-        switch (a){
+        switch (a) {
 
-            case CZARNY-> {
+            case CZARNY -> {
                 System.out.println("czarny");
             }
-            case CZERWONY-> {
+            case CZERWONY -> {
                 System.out.println("czerwony");
             }
 
-            case ZIELONY-> {
+            case ZIELONY -> {
                 System.out.println("zielony");
             }
-            default ->
-            {
+            default -> {
                 System.out.println("inne");
             }
 
@@ -68,9 +66,9 @@ public class Sterowanie {
 
     }
 
-    public String switchCase3(Colour a){
+    public String switchCase3(Colour a) {
 
-        String zwrotkaZeSwitcha = switch (a){
+        String zwrotkaZeSwitcha = switch (a) {
 
             case CZARNY: {
                 System.out.println("czarny");
@@ -87,8 +85,7 @@ public class Sterowanie {
                 yield "zielony lub biały zwrotka z funkcji";
 
             }
-            default:
-            {
+            default: {
                 System.out.println("inne");
                 yield "default";
 

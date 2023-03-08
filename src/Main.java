@@ -4,7 +4,8 @@ import Lambda.LambdaTest;
 import Porównywanko.Porównajmy;
 import Random.RandomTest;
 import Rekurencja.Rekurencja;
-import Sterowanko.Sterowanie;
+import Sterowanie.Sterowanie;
+import Streams.StreamTests;
 import Wątki.Wątki;
 
 import java.util.Arrays;
@@ -17,14 +18,14 @@ public class Main {
     public static void main(String[] args) {
 
         Main main = new Main();
-        //    main.lambaMain();
-       // main.randomMain();
+        //     main.lambaMain();
+        // main.randomMain();
         //    main.enumMain();
         //    main.rekurencjaMain();
         //    main.caseMain();
-     //   main.porównywanieMain();
-        main.wątkiMain();
-
+        //  main.porównywanieMain();
+        //   main.wątkiMain();
+        main.streamMain();
 
 
     }
@@ -36,6 +37,7 @@ public class Main {
         // lambdaTest.lambda2();
         // lambdaTest.lambdaAsParam();
         // lambdaTest.lambdaAsParam2();
+        lambdaTest.lambdaBuiltInInterfaces();
 
     }
 
@@ -106,8 +108,10 @@ public class Main {
     /* *************************   Porównywanie Tests   ********************************* */
     public void porównywanieMain() {
         Porównajmy porównajmy = new Porównajmy();
-        porównajmy.createCollections();
-        porównajmy.treeMapTest();
+        //   porównajmy.createCollections();
+        //    porównajmy.treeMapTest();
+        //    porównajmy.kolorki();
+        porównajmy.start();
 
 
     }
@@ -115,10 +119,15 @@ public class Main {
     /* *************************   Wątki Tests   ********************************* */
     public void wątkiMain() {
         Wątki wątki = new Wątki();
-     //   wątki.startujeWątki();
+        //   wątki.startujeWątki();
         wątki.startujeWątkiRunnable();
         wątki.startujeWątkiRunnableSynchro();
 
     }
 
+    /* *************************   Stream Tests   ********************************* */
+    public void streamMain() {
+        StreamTests streamTests = new StreamTests();
+        streamTests.startStreams();
+    }
 }

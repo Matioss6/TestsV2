@@ -3,11 +3,11 @@ package Porównywanko;
 import java.util.Comparator;
 import java.util.Objects;
 
-public class Książka implements  Comparable<Książka>{
+public class Książka implements Comparable<Książka> {
 
     private String nazwa;
     private String autor;
-    private int ID;
+    private final int ID;
 
     public Książka(String nazwa, String autor, int ID) {
         this.ID = ID;
@@ -30,7 +30,6 @@ public class Książka implements  Comparable<Książka>{
     public void setAutor(String autor) {
         this.autor = autor;
     }
-
 
 
     @Override
@@ -60,11 +59,10 @@ public class Książka implements  Comparable<Książka>{
     public int compareTo(Książka o) {
         int result;
 
-        result=this.autor.compareTo(o.autor);
-        if (result != 0)        {
+        result = this.autor.compareTo(o.autor);
+        if (result != 0) {
             return result;
-        }
-        else {
+        } else {
             result = this.nazwa.compareTo(o.nazwa);
         }
         System.out.println(result);

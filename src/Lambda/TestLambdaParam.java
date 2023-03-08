@@ -2,5 +2,5 @@ package Lambda;
 
 public interface TestLambdaParam {
 
-    public String addString(String a, String b);
+    String addString(String a, String b);
 }

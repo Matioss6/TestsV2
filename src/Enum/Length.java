@@ -18,7 +18,7 @@ public enum Length {
         }
     };
 
-    private String displayLength;
+    private final String displayLength;
 
     Length(String displayLength) {
         this.displayLength = displayLength;
