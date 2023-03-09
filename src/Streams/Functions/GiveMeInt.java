@@ -1,4 +1,4 @@
-package Streams;
+package Streams.Functions;
 
 import java.util.function.IntSupplier;
 

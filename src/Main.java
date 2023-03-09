@@ -128,6 +128,9 @@ public class Main {
     /* *************************   Stream Tests   ********************************* */
     public void streamMain() {
         StreamTests streamTests = new StreamTests();
-        streamTests.startStreams();
+    //    streamTests.startStreams();
+        streamTests.streamWithFile();
+      //  streamTests.mappingData("55","33", "44" ,"22");
+      //  streamTests.mapping2DData();
     }
 }
