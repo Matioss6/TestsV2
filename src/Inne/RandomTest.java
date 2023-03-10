@@ -1,4 +1,4 @@
-package Random;
+package Inne;
 
 import java.util.Arrays;
 import java.util.List;

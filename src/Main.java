@@ -2,10 +2,11 @@ import Enum.Colour;
 import Enum.Length;
 import Lambda.LambdaTest;
 import Porównywanko.Porównajmy;
-import Random.RandomTest;
+import Inne.RandomTest;
 import Rekurencja.Rekurencja;
 import Sterowanie.Sterowanie;
 import Streams.StreamTests;
+import Streams.UrlStream;
 import Wątki.Wątki;
 
 import java.util.Arrays;
@@ -26,7 +27,7 @@ public class Main {
         //  main.porównywanieMain();
         //   main.wątkiMain();
         main.streamMain();
-
+     //   main.urlStreamMain();
 
     }
 
@@ -129,8 +130,14 @@ public class Main {
     public void streamMain() {
         StreamTests streamTests = new StreamTests();
     //    streamTests.startStreams();
-        streamTests.streamWithFile();
+    //    streamTests.streamWithFile();
       //  streamTests.mappingData("55","33", "44" ,"22");
       //  streamTests.mapping2DData();
+        streamTests.buildingStreams();
+    }
+
+    public void urlStreamMain(){
+        UrlStream urlStream = new UrlStream();
+        urlStream.takeFromURL();
     }
 }
