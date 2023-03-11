@@ -9,6 +9,7 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoField;
 import java.util.*;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -144,14 +145,17 @@ public class StreamTests {
 
         buildier.build().forEach(System.out::println);
 
+
         String cities[] = { "Boston", "Denver", "Atlanta", "Chicago" };
         Arrays.stream(cities).map(c -> c.toUpperCase()).sorted(Comparator.reverseOrder()).forEach(c -> System.out.println(c));
 
 
-        int summable[] = {299, 792, 160, 510, 209};
+
+        int summable[] = {10, 20, 30, 40, 50};
         System.out.println(Arrays.stream(summable).sum());
-        System.out.println(Arrays.stream(summable).reduce(-170,
-                (sum, incoming) -> ((2*sum))));
+        System.out.println(Arrays.stream(summable).reduce(10,
+                (sum, incoming) -> ((sum+incoming))));
+
     }
 
 
