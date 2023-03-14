@@ -8,6 +8,7 @@ import java.nio.file.Path;
 import java.time.LocalDate;
 import java.time.temporal.ChronoField;
 import java.util.*;
+import java.util.function.Function;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -109,7 +110,7 @@ public class StreamTests {
                 forEach(d -> System.out.println(d));
     }
 
-    public void mapping2DData() {
+    public void mapping2DData()  {
 
         int[][] grades = {{3, 4, 5, 2}, {5, 6, 2, 3}, {3, 3, 2, 4, 5, 3}, {6, 4, 7, 8, 94}};
         Stream<int[]> a = Stream.of(grades);
@@ -128,6 +129,36 @@ public class StreamTests {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        Pattern separator2 = Pattern.compile("[.,\\s]+");
+
+        // Start our analysis by streaming the lines of our file
+        Map<String,Long> uniqueMap = null;
+        try {
+            uniqueMap = Files.lines(Path.of("lorem-ipsum.txt"))
+                    // now turn that stream into a bigger, ongoing stream of words
+                    // from each line
+                    .flatMap(ls -> separator.splitAsStream(ls))
+                    // and normalize those words to remove case differences
+                    .map(word -> word.toLowerCase())
+                    // and finally get them into a map of words and counts
+                    .collect(
+                            // our word is the key, but we still need a grouping function, so
+                            // use the "identity" function that simply returns what it is given
+                            Collectors.groupingBy(Function.identity(),
+                                    Collectors.counting()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // Take a breather, we have our answers, but we have too many of
+        // them. We could manually sort uniqueMap's values and print the
+        // top few, but let's use another stream.
+        Map<String, Long> finalUniqueMap = uniqueMap;
+        uniqueMap.keySet().stream()
+                .sorted((cc,b) -> finalUniqueMap.get(b).intValue() - finalUniqueMap.get(cc).intValue())
+                .limit(5)
+                .forEach(key -> System.out.println(key + ": " + finalUniqueMap.get(key)));
     }
 
     public void buildingStreams(){
@@ -155,6 +186,9 @@ public class StreamTests {
         System.out.println(Arrays.stream(summable).sum());
         System.out.println(Arrays.stream(summable).reduce(10,
                 (sum, incoming) -> ((sum+incoming))));
+
+        int[] a = Arrays.stream(summable).map(s -> s*100).toArray();
+        Arrays.stream(cities).collect(Collectors.toList());
 
     }
 
