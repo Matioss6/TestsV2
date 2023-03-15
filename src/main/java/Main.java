@@ -7,16 +7,17 @@ import Rekurencja.Rekurencja;
 import Sterowanie.Sterowanie;
 import Streams.StreamTests;
 import Streams.UrlStream;
-import Wątki.Wątki;
+import Wątki.*;
 
 import java.util.Arrays;
+import java.util.concurrent.ExecutionException;
 
 /**
  * Main method
  */
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
 
         Main main = new Main();
         //     main.lambaMain();
@@ -25,8 +26,8 @@ public class Main {
         //    main.rekurencjaMain();
         //    main.caseMain();
         //  main.porównywanieMain();
-        //   main.wątkiMain();
-        main.streamMain();
+           main.wątkiMain();
+     //   main.streamMain();
      //   main.urlStreamMain();
 
     }
@@ -118,11 +119,17 @@ public class Main {
     }
 
     /* *************************   Wątki Tests   ********************************* */
-    public void wątkiMain() {
+    public void wątkiMain() throws ExecutionException, InterruptedException {
         Wątki wątki = new Wątki();
+        FutureTests futureTests = new FutureTests();
         //   wątki.startujeWątki();
-        wątki.startujeWątkiRunnable();
-        wątki.startujeWątkiRunnableSynchro();
+      //  wątki.startujeWątkiRunnable();
+       // wątki.startujeWątkiRunnableSynchro();
+       // futureTests.futureTest1();
+       // futureTests.futureTest2();
+        futureTests.futureTest3();
+
+
 
     }
 
