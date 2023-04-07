@@ -17,6 +17,9 @@ public class BinToNumber {
 
         }
 
+        // MUCH BETTER SOLUTION
+        //  binary.stream().reduce((a,b)->a*2+b).get();
+
         return result;
     }
 
