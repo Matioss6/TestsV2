@@ -35,6 +35,9 @@ public class RandomTest {
         String allNames = names.stream().collect(Collectors.joining(", ", "{", "}"));
         System.out.println(allNames);
 
+
+
+
     }
 
 }

@@ -49,6 +49,12 @@ public class Porównajmy {
         książka1.sort(new Książka.KomparatorID());
         System.out.println("książka 1(LIST - sorted + komparator) = " + książka1);
 
+        List<String> monthCollection = new ArrayList<>();
+        monthCollection.add("January");
+        monthCollection.add("February");
+        monthCollection.add("March");
+        String[] monthArray = monthCollection.toArray(String[]::new);
+
     }
 
     public void treeMapTest() {

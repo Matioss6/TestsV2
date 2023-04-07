@@ -1,5 +1,6 @@
 import Enum.Colour;
 import Enum.Length;
+import IO.IO;
 import Lambda.LambdaTest;
 import Porównywanko.Porównajmy;
 import Inne.RandomTest;
@@ -26,9 +27,10 @@ public class Main {
         //    main.rekurencjaMain();
         //    main.caseMain();
         //  main.porównywanieMain();
-           main.wątkiMain();
+      //     main.wątkiMain();
      //   main.streamMain();
      //   main.urlStreamMain();
+        main.ioTests();
 
     }
 
@@ -146,5 +148,11 @@ public class Main {
     public void urlStreamMain(){
         UrlStream urlStream = new UrlStream();
         urlStream.takeFromURL();
+    }
+
+    public void ioTests(){
+        IO io = new IO();
+        IO.writeFile();
+        IO.readFile();
     }
 }
